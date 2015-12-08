@@ -26,8 +26,14 @@ class CountriesController < ApplicationController
     redirect_to(countries_path)
   end
 
+  def destroy
+    country = Country.find(params[:id])
+    country.destroy
+    redirect_to(countries_path)
+  end
+
   private
   def country_params
-    params.require(:country).permit(:name, :image, :size, :population, :first_language, :national_symbol, :national_anthem)
+    params.require(:country).permit(:name, :image, :capital, :size, :population, :first_language, :national_symbol, :national_anthem)
   end
 end
