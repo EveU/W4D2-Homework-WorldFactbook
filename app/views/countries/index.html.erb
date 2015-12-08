@@ -1,7 +1,7 @@
 <% @countries.each do |country| %>
   <%= country.name %>
   <%= link_to 'Country Facts', country_path(country) %>
-  <%= button_to('Delete Country', country_path(country), method: :delete, data: {confirm: 'Are you sure?'}) %>
+  <%= button_to('Delete Country', country_path(country), method: :delete, data: {confirm:  "Delete #{country.name}... Really?!"}) %>
   <%= link_to 'Edit Country', edit_country_path(country)%>
   <br>
   <br>

@@ -5,3 +5,6 @@
 <p>Main Language: <%= @country.first_language %></p>
 <p>National Symbol: <%= @country.national_symbol %></p>
 <p>National Anthem: <%= @country.national_anthem %></p>
+<br>
+<%= link_to 'Edit', edit_country_path(@country) %>
+<%= button_to 'Delete', country_path(@country), method: :delete, data: {confirm: "Delete #{@country.name}... Really?!"} %>

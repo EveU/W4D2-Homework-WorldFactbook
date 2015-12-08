@@ -16,6 +16,16 @@ class CountriesController < ApplicationController
     @country = Country.find(params[:id])
   end
 
+  def edit
+    @country = Country.find(params[:id])
+  end
+
+  def update
+    country = Country.find(params[:id])
+    country.update(country_params)
+    redirect_to(countries_path)
+  end
+
   private
   def country_params
     params.require(:country).permit(:name, :image, :size, :population, :first_language, :national_symbol, :national_anthem)
