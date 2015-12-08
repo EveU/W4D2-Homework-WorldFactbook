@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20151208194816) do
 
   create_table "countries", force: :cascade do |t|
     t.string   "name"
-    t.string   "image"
+    t.text     "image"
     t.integer  "size"
     t.integer  "population"
     t.string   "first_language"
